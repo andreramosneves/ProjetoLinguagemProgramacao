@@ -1,0 +1,155 @@
+program
+correto
+;
+var
+a
+,
+b
+,
+c
+:
+integer
+;
+var
+d
+,
+e
+,
+f
+:
+boolean
+;
+procedure
+proc
+(
+var
+a1
+:
+integer
+)
+;
+var
+a
+,
+b
+,
+c
+:
+integer
+;
+var
+d
+,
+e
+,
+f
+:
+boolean
+;
+begin
+a
+:=
+1
+;
+if
+(
+a
+<
+1
+)
+then
+a
+:=
+12
+;
+end
+;
+begin
+a
+:=
+2
+;
+b
+:=
+10
+;
+c
+:=
+11
+;
+a
+:=
+b
++
+c
+;
+d
+:=
+true
+;
+e
+:=
+false
+;
+f
+:=
+true
+;
+write
+(
+b
+)
+;
+if
+(
+d
+ERRO SINTATICO
+ERRO SINTATICO
+ERRO SINTATICO
+ERRO SINTATICO
+ERRO SINTATICO
+ERRO SINTATICO
+ERRO SINTATICO
+ERRO SINTATICO
+ERRO SINTATICO
+ERRO SINTATICO
+ERRO SINTATICO
+ERRO SINTATICO
+ERRO SINTATICO
+ERRO SINTATICO
+ERRO SINTATICO
+ERRO SINTATICO
+ERRO SINTATICO
+ERRO SINTATICO
+ERRO SINTATICO
+ERRO SINTATICO
+ERRO SINTATICO
+ERRO SINTATICO
+ERRO SINTATICO
+ERRO SINTATICO
+ERRO SINTATICO
+ERRO SINTATICO
+)
+ERRO SINTATICO
+ERRO SINTATICO
+ERRO SINTATICO
+ERRO SINTATICO
+ERRO SINTATICO
+ERRO SINTATICO
+ERRO SINTATICO
+ERRO SINTATICO
+then
+b
+:=
+2
+;
+a
+:=
+a
+-
+1
+;
+end
+;
+ERRO SINTATICO
+.

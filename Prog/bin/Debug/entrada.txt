@@ -1,0 +1,5 @@
+program correto ;
+
+begin
+
+end .

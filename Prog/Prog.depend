@@ -1,0 +1,182 @@
+# depslib dependency file v1.0
+1506536591 source:c:\users\linolica1\desktop\andre\projprogramacaocodeblocks\prog\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	<string.h>
+
+1510521878 source:c:\users\linolica1\desktop\prog\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"include/analiseLexica.h"
+	"include/analiseSintatica.h"
+	"include/Pilha.h"
+	"assert.h"
+
+1508778006 source:c:\temp\prog\prog\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"include/analiseLexica.h"
+	"include/analiseSintatica.h"
+	"include/Pilha.h"
+	"assert.h"
+
+1510504168 source:c:\temp\prog\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"include/analiseLexica.h"
+	"include/analiseSintatica.h"
+	"include/analiseSemantica.h"
+	"include/Pilha.h"
+	"assert.h"
+
+1508530562 source:c:\users\linolica1\desktop\prog\prog\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"assert.h"
+
+1508786186 source:c:\temp\prog\prog\src\analiselexica.c
+	"../include/analiseLexica.h"
+
+1508768036 c:\temp\prog\prog\include\analiselexica.h
+
+1508768370 c:\temp\prog\prog\include\pilha.h
+
+1508768398 source:c:\temp\prog\prog\src\pilha.c
+	"Pilha.h"
+	<stdio.h>
+	<stdlib.h>
+
+1508788189 c:\temp\prog\prog\include\analisesintatica.h
+
+1508788415 source:c:\temp\prog\prog\src\analisesintatica.c
+	"../include/analiseSintatica.h"
+	"../include/Pilha.h"
+	"string.h"
+
+1510516180 c:\users\linolica1\desktop\prog\include\analiselexica.h
+
+1510516180 c:\users\linolica1\desktop\prog\include\analisesintatica.h
+
+1510516180 c:\users\linolica1\desktop\prog\include\pilha.h
+
+1510516180 source:c:\users\linolica1\desktop\prog\src\analiselexica.c
+	"../include/analiseLexica.h"
+
+1510516180 source:c:\users\linolica1\desktop\prog\src\analisesintatica.c
+	"../include/analiseSintatica.h"
+	"../include/Pilha.h"
+	"string.h"
+
+1510516180 source:c:\users\linolica1\desktop\prog\src\pilha.c
+	"Pilha.h"
+	<stdio.h>
+	<stdlib.h>
+
+1509367966 source:c:\users\andreramosneves\desktop\prog\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"include/analiseLexica.h"
+	"include/analiseSintatica.h"
+	"include/Pilha.h"
+	"assert.h"
+
+1508963392 c:\users\andreramosneves\desktop\prog\include\analiselexica.h
+
+1509390034 c:\users\andreramosneves\desktop\prog\include\analisesintatica.h
+
+1508870076 c:\users\andreramosneves\desktop\prog\include\pilha.h
+
+1509049704 source:c:\users\andreramosneves\desktop\prog\src\analiselexica.c
+	"../include/analiseLexica.h"
+
+1509390942 source:c:\users\andreramosneves\desktop\prog\src\analisesintatica.c
+	"../include/analiseSintatica.h"
+	"../include/Pilha.h"
+	"string.h"
+
+1508870076 source:c:\users\andreramosneves\desktop\prog\src\pilha.c
+	"Pilha.h"
+	<stdio.h>
+	<stdlib.h>
+
+1508959792 c:\temp\prog\include\analiselexica.h
+
+1509389970 c:\temp\prog\include\analisesintatica.h
+
+1508866476 c:\temp\prog\include\pilha.h
+
+1509392332 source:c:\temp\prog\src\analiselexica.c
+	"../include/analiseLexica.h"
+
+1509477902 source:c:\temp\prog\src\analisesintatica.c
+	"../include/analiseSintatica.h"
+	"../include/Pilha.h"
+	"string.h"
+
+1508866476 source:c:\temp\prog\src\pilha.c
+	"Pilha.h"
+	<stdio.h>
+	<stdlib.h>
+
+1510504362 source:c:\temp\prog\src\analisesemantica.c
+	"../include/analiseSintatica.h"
+	"../include/analiseSemantica.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1510503372 c:\temp\prog\include\analisesemantica.h
+
+1510516180 c:\users\linolica1\desktop\prog\include\analisesemantica.h
+
+1510522012 source:c:\users\linolica1\desktop\prog\src\analisesemantica.c
+	"../include/analiseSintatica.h"
+	"../include/analiseSemantica.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1510522575 source:c:\users\santo\desktop\prog\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"include/analiseLexica.h"
+	"include/analiseSintatica.h"
+	"include/Pilha.h"
+	"assert.h"
+
+1508963392 c:\users\santo\desktop\prog\include\analiselexica.h
+
+1509393570 c:\users\santo\desktop\prog\include\analisesintatica.h
+
+1510511578 c:\users\santo\desktop\prog\include\analisesemantica.h
+
+1508870076 c:\users\santo\desktop\prog\include\pilha.h
+
+1509395932 source:c:\users\santo\desktop\prog\src\analiselexica.c
+	"../include/analiseLexica.h"
+
+1509481502 source:c:\users\santo\desktop\prog\src\analisesintatica.c
+	"../include/analiseSintatica.h"
+	"../include/Pilha.h"
+	"string.h"
+
+1508870076 source:c:\users\santo\desktop\prog\src\pilha.c
+	"Pilha.h"
+	<stdio.h>
+	<stdlib.h>
+
+1510521755 source:c:\users\santo\desktop\prog\src\analisesemantica.c
+	"../include/analiseSintatica.h"
+	"../include/analiseSemantica.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

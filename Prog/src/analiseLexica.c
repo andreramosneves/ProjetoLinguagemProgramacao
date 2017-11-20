@@ -1,0 +1,928 @@
+#include "../include/analiseLexica.h"
+
+int analiseLexica(char var[]){
+		/* Automato não aceita vazio */
+		if(strlen(var) == 0)
+			return 1;
+
+		int inicio = 0;
+
+		/*  Estado inicial  Q0*/
+		q0:
+		if (var[inicio] == '-'){
+			inicio = inicio + 1;
+			goto q1;
+		}
+		else if(var[inicio] == ','){
+			inicio = inicio + 1;
+			goto q2;
+		}
+		else if(var[inicio] == ';'){
+			inicio = inicio + 1;
+			goto q3;
+		}
+		else if(var[inicio] == ':'){
+			inicio = inicio + 1;
+			goto q4;
+		}
+		else if(var[inicio] == '.'){
+			inicio = inicio + 1;
+			goto q5;
+		}
+		else if(var[inicio] == '('){
+			inicio = inicio + 1;
+			goto q6;
+		}
+		else if(var[inicio] == ')'){
+			inicio = inicio + 1;
+			goto q7;
+		}
+		else if(var[inicio] == '*'){
+			inicio = inicio + 1;
+			goto q8;
+		}
+		else if(var[inicio] == '/'){
+			inicio = inicio + 1;
+			goto q11;
+		}
+		else if(var[inicio] == '<'){
+			inicio = inicio + 1;
+			goto q14;
+		}
+		else if(var[inicio] == '>'){
+			inicio = inicio + 1;
+			goto q17;
+		}else if(var[inicio] == 'a'){
+			inicio = inicio + 1;
+			goto q19;
+		}else if(var[inicio] == 'b'){
+			inicio = inicio + 1;
+			goto q22;
+		}else if(var[inicio] == 'd'){
+			inicio = inicio + 1;
+			goto q33;
+		}else if(var[inicio] == 'e'){
+			inicio = inicio + 1;
+			goto q37;
+		}else if(var[inicio] == 'f'){
+			inicio = inicio + 1;
+			goto q43;
+		}else if(var[inicio] == 'i'){
+			inicio = inicio + 1;
+			goto q48;
+		}else if(var[inicio] == 'n'){
+			inicio = inicio + 1;
+			goto q56;
+		}else if(var[inicio] == 'o'){
+			inicio = inicio + 1;
+			goto q59;
+		}else if(var[inicio] == 'p'){
+			inicio = inicio + 1;
+			goto q61;
+		}else if(var[inicio] == 't'){
+			inicio = inicio + 1;
+			goto q74;
+		}else if(var[inicio] == 'v'){
+			inicio = inicio + 1;
+			goto q81;
+		}else if(var[inicio] == 'w'){
+			inicio = inicio + 1;
+			goto q84;
+		}else if (var[inicio] == '0'|| var[inicio] == '1'|| var[inicio] == '2'|| var[inicio] == '3'||
+                                     var[inicio] == '4'|| var[inicio] == '5'|| var[inicio] == '6'||
+                                      var[inicio] == '7'|| var[inicio] == '8'||var[inicio] == '9'){
+            inicio = inicio + 1;
+            goto q96;
+        }else if(var[inicio] == 'a' || var[inicio] == 'b' || var[inicio] == 'c' || var[inicio] == 'd'|| var[inicio] == 'e'||
+                    var[inicio] == 'f'|| var[inicio] == 'g'|| var[inicio] == 'h'||
+                     var[inicio] == 'i'|| var[inicio] == 'j'|| var[inicio] == 'k'||
+                      var[inicio] == 'l'|| var[inicio] == 'm'|| var[inicio] == 'n'||
+                       var[inicio] == 'o'|| var[inicio] == 'p'|| var[inicio] == 'q'||
+                        var[inicio] == 'r'|| var[inicio] == 's'|| var[inicio] == 't'||
+                         var[inicio] == 'u'|| var[inicio] == 'v'|| var[inicio] == 'w'||
+                          var[inicio] == 'y'|| var[inicio] == 'x'|| var[inicio] == 'z'||
+                           var[inicio] == 'A'|| var[inicio] == 'B'|| var[inicio] == 'C'||
+                            var[inicio] == 'D'|| var[inicio] == 'E'|| var[inicio] == 'F'||
+                             var[inicio] == 'G'|| var[inicio] == 'H'|| var[inicio] == 'I'||
+                              var[inicio] == 'J'|| var[inicio] == 'K'|| var[inicio] == 'L'||
+                               var[inicio] == 'M'|| var[inicio] == 'N'|| var[inicio] == 'O'||
+                                var[inicio] == 'P'|| var[inicio] == 'Q'|| var[inicio] == 'R'||
+                                 var[inicio] == 'S'|| var[inicio] == 'T'|| var[inicio] == 'U'||
+                                  var[inicio] == 'V'|| var[inicio] == 'W'|| var[inicio] == 'Y'||
+                                   var[inicio] == 'X'|| var[inicio] == 'Z'|| var[inicio] == 'A'||
+                                    var[inicio] == '0'|| var[inicio] == '1'|| var[inicio] == '2'||
+                                     var[inicio] == '3'|| var[inicio] == '4'|| var[inicio] == '5'||
+                                      var[inicio] == '6'|| var[inicio] == '7'|| var[inicio] == '8'||
+                                       var[inicio] == '9'){
+            inicio = inicio + 1;
+            goto q93;
+
+        }else if(var[inicio] == '+'){
+			inicio = inicio + 1;
+			goto q97;
+		}else if(var[inicio] == '='){
+			inicio = inicio + 1;
+			goto q98;
+		}
+
+
+
+		return 1;
+
+		// Palavra Final a ser reconhecida é -
+		q1:
+			if(strlen(var) == inicio){
+				sprintf(classe,"%s","delimitador");
+				return 0;
+			}
+			return 1;
+
+		// Palavra Final a ser reconhecida é ,
+		q2:
+			if(strlen(var) == inicio){
+				sprintf(classe,"%s","delimitador");
+				return 0;
+			}
+			return 1;
+
+		// Palavra Final a ser reconhecida é ;
+		q3:
+			if(strlen(var) == inicio){
+				sprintf(classe,"%s","delimitador");
+				return 0;
+			}
+			return 1;
+
+		// Palavra Final a ser reconhecida é :
+		q4:
+			if(strlen(var) == inicio){
+				sprintf(classe,"%s","delimitador");
+				return 0;
+			}
+			else if (var[inicio] == '=' ){
+				inicio = inicio + 1;
+				goto q10;
+			}else if (var[inicio] == ':' ){
+				inicio = inicio + 1;
+				goto q94;
+			}
+
+			return 1;
+
+		// Palavra Final a ser reconhecida é .
+		q5:
+			if(strlen(var) == inicio){
+				sprintf(classe,"%s","delimitador");
+				return 0;
+			}
+			return 1;
+
+		// Palavra Final a ser reconhecida é (
+		q6:
+			if(strlen(var) == inicio){
+				sprintf(classe,"%s","delimitador");
+				return 0;
+			}
+			return 1;
+
+		// Palavra Final a ser reconhecida é )
+		q7:
+			if(strlen(var) == inicio){
+				sprintf(classe,"%s","delimitador");
+				return 0;
+			}
+			return 1;
+
+		// Palavra Final a ser reconhecida é *
+		q8:
+			if(strlen(var) == inicio){
+				sprintf(classe,"%s","operador");
+				return 0;
+			}
+			else if(var[inicio] == '/' ){
+				inicio = inicio + 1;
+				goto q9;
+			}
+			return 1;
+
+		// Palavra Final a ser reconhecida é */
+		q9:
+			if(strlen(var) == inicio){
+				sprintf(classe,"%s","comentario");
+				return 0;
+			}
+			return 1;
+
+		// Palavra Final a ser reconhecida é :=
+		q10:
+			if(strlen(var) == inicio){
+				sprintf(classe,"%s","operador");
+				return 0;
+			}
+			return 1;
+
+		// Palavra Final a ser reconhecida é *
+		q11:
+			if(var[inicio] == '*'){
+				inicio = inicio + 1;
+				goto q12;
+			}
+			return 1;
+
+		// Palavra Final a ser reconhecida é /*
+		q12:
+			if(strlen(var) == inicio){
+				sprintf(classe,"%s","comentario");
+				return 0;
+			}
+			return 1;
+
+
+		// Palavra Final a ser reconhecida é +
+		q13:
+			if(strlen(var) == inicio){
+				sprintf(classe,"%s","operador");
+				return 0;
+			}
+			return 1;
+
+		// Palavra Final a ser reconhecida é <
+		q14:
+			if(strlen(var) == inicio){
+				sprintf(classe,"%s","operador");
+				return 0;
+			}
+			else if(var[inicio] == '='){
+				inicio = inicio + 1;
+				goto q15;
+		 	}
+			else if(var[inicio] == '>'){
+				inicio = inicio + 1;
+				goto q16;
+		 	}
+			return 1;
+
+		// Palavra Final a ser reconhecida é <=
+		q15:
+			if(strlen(var) == inicio){
+				sprintf(classe,"%s","operador");
+				return 0;
+			}
+			return 1;
+
+		// Palavra Final a ser reconhecida é <>
+		q16:
+			if(strlen(var) == inicio){
+				sprintf(classe,"%s","operador");
+				return 0;
+			}
+			return 1;
+
+		// Palavra Final a ser reconhecida é >
+		q17:
+			if(strlen(var) == inicio){
+				sprintf(classe,"%s","operador");
+				return 0;
+			}
+			else if(var[inicio] == '='){
+				inicio = inicio + 1;
+				goto q18;
+		 	}
+			return 1;
+
+		// Palavra Final a ser reconhecida é >=
+		q18:
+			if(strlen(var) == inicio){
+				sprintf(classe,"%s","operador");
+				return 0;
+			}
+			return 1;
+
+		q19:
+			if(var[inicio] == 'n'){
+				inicio = inicio + 1;
+				goto q20;
+		 	}
+            goto q93;
+
+		q20:
+			if(var[inicio] == 'd'){
+				inicio = inicio + 1;
+				goto q21;
+		 	}
+            goto q93;
+
+		// Palavra Final a ser reconhecida é and
+		q21:
+			if(strlen(var) == inicio){
+				sprintf(classe,"%s","operador");
+				return 0;
+			}
+            goto q93;
+
+		q22:
+			if(var[inicio] == 'e'){
+				inicio = inicio + 1;
+				goto q23;
+		 	}else if(var[inicio] == 'o'){
+				inicio = inicio + 1;
+				goto q27;
+			}
+            goto q93;
+
+		q23:
+			if(var[inicio] == 'g'){
+				inicio = inicio + 1;
+				goto q24;
+		 	}
+            goto q93;
+		q24:
+			if(var[inicio] == 'i'){
+				inicio = inicio + 1;
+				goto q25;
+		 	}
+            goto q93;
+		q25:
+			if(var[inicio] == 'n'){
+				inicio = inicio + 1;
+				goto q26;
+		 	}
+            goto q93;
+		// Palavra Final a ser reconhecida é begin
+		q26:
+			if(strlen(var) == inicio){
+				sprintf(classe,"%s","reservada");
+				return 0;
+			}
+            goto q93;
+
+		q27:
+			if(var[inicio] == 'o'){
+				inicio = inicio + 1;
+				goto q28;
+		 	}
+            goto q93;
+
+		q28:
+			if(var[inicio] == 'l'){
+				inicio = inicio + 1;
+				goto q29;
+		 	}
+            goto q93;
+
+		q29:
+			if(var[inicio] == 'e'){
+				inicio = inicio + 1;
+				goto q30;
+		 	}
+            goto q93;
+
+		q30:
+			if(var[inicio] == 'a'){
+				inicio = inicio + 1;
+				goto q31;
+		 	}
+            goto q93;
+
+		q31:
+			if(var[inicio] == 'n'){
+				inicio = inicio + 1;
+				goto q32;
+		 	}
+            goto q93;
+
+		// Palavra Final a ser reconhecida é boolean
+		q32:
+			if(strlen(var) == inicio){
+				sprintf(classe,"%s","tipo");
+				return 0;
+			}
+            goto q93;
+
+		q33:
+			if(var[inicio] == 'i'){
+				inicio = inicio + 1;
+				goto q34;
+		 	}else if(var[inicio] == 'o'){
+				inicio = inicio + 1;
+				goto q36;
+		 	}
+            goto q93;
+
+		q34:
+			if(var[inicio] == 'v'){
+				inicio = inicio + 1;
+				goto q35;
+		 	}
+            goto q93;
+
+		// Palavra Final a ser reconhecida é div
+		q35:
+			if(strlen(var) == inicio){
+				sprintf(classe,"%s","operador");
+				return 0;
+			}
+            goto q93;
+
+		// Palavra Final a ser reconhecida é do
+		q36:
+			if(strlen(var) == inicio){
+				sprintf(classe,"%s","reservada");
+				return 0;
+			}
+            goto q93;
+
+		q37:
+			if(var[inicio] == 'l'){
+				inicio = inicio + 1;
+				goto q38;
+		 	}else if(var[inicio] == 'n'){
+				inicio = inicio + 1;
+				goto q41;
+		 	}
+            goto q93;
+		q38:
+			if(var[inicio] == 's'){
+				inicio = inicio + 1;
+				goto q39;
+		 	}
+            goto q93;
+		q39:
+			if(var[inicio] == 'e'){
+				inicio = inicio + 1;
+				goto q40;
+		 	}
+            goto q93;
+
+		// Palavra Final a ser reconhecida é else
+		q40:
+			if(strlen(var) == inicio){
+				sprintf(classe,"%s","reservada");
+				return 0;
+			}
+            goto q93;
+
+		q41:
+			if(var[inicio] == 'd'){
+				inicio = inicio + 1;
+				goto q42;
+		 	}
+            goto q93;
+
+		// Palavra Final a ser reconhecida é end
+		q42:
+			if(strlen(var) == inicio){
+				sprintf(classe,"%s","reservada");
+				return 0;
+			}
+            goto q93;
+
+		q43:
+			if(var[inicio] == 'a'){
+				inicio = inicio + 1;
+				goto q44;
+		 	}
+            goto q93;
+
+		q44:
+			if(var[inicio] == 'l'){
+				inicio = inicio + 1;
+				goto q45;
+		 	}
+            goto q93;
+		q45:
+			if(var[inicio] == 's'){
+				inicio = inicio + 1;
+				goto q46;
+		 	}
+            goto q93;
+
+		q46:
+			if(var[inicio] == 'e'){
+				inicio = inicio + 1;
+				goto q47;
+		 	}
+            goto q93;
+
+		// Palavra Final a ser reconhecida é false
+		q47:
+			if(strlen(var) == inicio){
+				sprintf(classe,"%s","bool");
+				return 0;
+			}
+            goto q93;
+
+		q48:
+			if(var[inicio] == 'f'){
+				inicio = inicio + 1;
+				goto q49;
+		 	}else if(var[inicio] == 'n'){
+				inicio = inicio + 1;
+				goto q50;
+		 	}
+
+            goto q93;
+
+		// Palavra Final a ser reconhecida é if
+		q49:
+			if(strlen(var) == inicio){
+				sprintf(classe,"%s","reservada");
+				return 0;
+			}
+            goto q93;
+
+		q50:
+			if(var[inicio] == 't'){
+				inicio = inicio + 1;
+				goto q51;
+		 	}
+            goto q93;
+
+		q51:
+			if(var[inicio] == 'e'){
+				inicio = inicio + 1;
+				goto q52;
+		 	}
+            goto q93;
+		q52:
+			if(var[inicio] == 'g'){
+				inicio = inicio + 1;
+				goto q53;
+		 	}
+            goto q93;
+		q53:
+			if(var[inicio] == 'e'){
+				inicio = inicio + 1;
+				goto q54;
+		 	}
+            goto q93;
+		q54:
+			if(var[inicio] == 'r'){
+				inicio = inicio + 1;
+				goto q55;
+		 	}
+            goto q93;
+
+		// Palavra Final a ser reconhecida é integer
+		q55:
+			if(strlen(var) == inicio){
+				sprintf(classe,"%s","tipo");
+				return 0;
+			}
+            goto q93;
+
+		q56:
+			if(var[inicio] == 'o'){
+				inicio = inicio + 1;
+				goto q57;
+		 	}
+            goto q93;
+
+		q57:
+			if(var[inicio] == 't'){
+				inicio = inicio + 1;
+				goto q58;
+		 	}
+            goto q93;
+
+		// Palavra Final a ser reconhecida é not
+		q58:
+			if(strlen(var) == inicio){
+				sprintf(classe,"%s","operador");
+				return 0;
+			}
+            goto q93;
+
+		q59:
+			if(var[inicio] == 'r'){
+				inicio = inicio + 1;
+				goto q60;
+		 	}
+            goto q93;
+
+		// Palavra Final a ser reconhecida é or
+		q60:
+			if(strlen(var) == inicio){
+				sprintf(classe,"%s","or");
+				return 0;
+			}
+            goto q93;
+
+		q61:
+			if(var[inicio] == 'r'){
+				inicio = inicio + 1;
+				goto q62;
+		 	}
+            goto q93;
+
+		q62:
+			if(var[inicio] == 'o'){
+				inicio = inicio + 1;
+				goto q63;
+		 	}
+            goto q93;
+
+		q63:
+			if(var[inicio] == 'c'){
+				inicio = inicio + 1;
+				goto q64;
+		 	}else if(var[inicio] == 'g'){
+				inicio = inicio + 1;
+				goto q70;
+		 	}
+
+            goto q93;
+
+		q64:
+			if(var[inicio] == 'e'){
+				inicio = inicio + 1;
+				goto q65;
+		 	}
+            goto q93;
+
+		q65:
+			if(var[inicio] == 'd'){
+				inicio = inicio + 1;
+				goto q66;
+		 	}
+            goto q93;
+
+		q66:
+			if(var[inicio] == 'u'){
+				inicio = inicio + 1;
+				goto q67;
+		 	}
+            goto q93;
+
+		q67:
+			if(var[inicio] == 'r'){
+				inicio = inicio + 1;
+				goto q68;
+		 	}
+            goto q93;
+		q68:
+			if(var[inicio] == 'e'){
+				inicio = inicio + 1;
+				goto q69;
+		 	}
+            goto q93;
+
+		// Palavra Final a ser reconhecida é procedure
+		q69:
+			if(strlen(var) == inicio){
+				sprintf(classe,"%s","reservada");
+				return 0;
+			}
+            goto q93;
+
+		q70:
+			if(var[inicio] == 'r'){
+				inicio = inicio + 1;
+				goto q71;
+		 	}
+            goto q93;
+
+		q71:
+			if(var[inicio] == 'a'){
+				inicio = inicio + 1;
+				goto q72;
+		 	}
+            goto q93;
+
+		q72:
+			if(var[inicio] == 'm'){
+				inicio = inicio + 1;
+				goto q73;
+		 	}
+            goto q93;
+
+		// Palavra Final a ser reconhecida é program
+		q73:
+			if(strlen(var) == inicio){
+				sprintf(classe,"%s","reservada");
+				return 0;
+			}
+            goto q93;
+
+		q74:
+			if(var[inicio] == 'h'){
+				inicio = inicio + 1;
+				goto q75;
+		 	}else if(var[inicio] == 'r'){
+				inicio = inicio + 1;
+				goto q78;
+		 	}
+            goto q93;
+		q75:
+			if(var[inicio] == 'e'){
+				inicio = inicio + 1;
+				goto q76;
+		 	}
+            goto q93;
+
+		q76:
+			if(var[inicio] == 'n'){
+				inicio = inicio + 1;
+				goto q77;
+		 	}
+            goto q93;
+
+		// Palavra Final a ser reconhecida é then
+		q77:
+			if(strlen(var) == inicio){
+				sprintf(classe,"%s","reservada");
+				return 0;
+			}
+            goto q93;
+
+		q78:
+			if(var[inicio] == 'u'){
+				inicio = inicio + 1;
+				goto q79;
+		 	}
+            goto q93;
+
+		q79:
+			if(var[inicio] == 'e'){
+				inicio = inicio + 1;
+				goto q80;
+		 	}
+            goto q93;
+
+		// Palavra Final a ser reconhecida é true
+		q80:
+			if(strlen(var) == inicio){
+				sprintf(classe,"%s","bool");
+				return 0;
+			}
+            goto q93;
+
+		q81:
+			if(var[inicio] == 'a'){
+				inicio = inicio + 1;
+				goto q82;
+		 	}
+            goto q93;
+
+		q82:
+			if(var[inicio] == 'r'){
+				inicio = inicio + 1;
+				goto q83;
+		 	}
+            goto q93;
+
+		// Palavra Final a ser reconhecida é var
+		q83:
+			if(strlen(var) == inicio){
+				sprintf(classe,"%s","reservada");
+				return 0;
+			}
+            goto q93;
+
+		q84:
+			if(var[inicio] == 'r'){
+				inicio = inicio + 1;
+				goto q85;
+		 	}else if(var[inicio] == 'h'){
+				inicio = inicio + 1;
+				goto q89;
+		 	}
+            goto q93;
+
+		q85:
+			if(var[inicio] == 'i'){
+				inicio = inicio + 1;
+				goto q86;
+		 	}
+            goto q93;
+
+		q86:
+			if(var[inicio] == 't'){
+				inicio = inicio + 1;
+				goto q87;
+		 	}
+            goto q93;
+
+		q87:
+			if(var[inicio] == 'e'){
+				inicio = inicio + 1;
+				goto q88;
+		 	}
+            goto q93;
+
+		// Palavra Final a ser reconhecida é write
+		q88:
+			if(strlen(var) == inicio){
+				sprintf(classe,"%s","reservada");
+				return 0;
+			}
+            goto q93;
+
+		q89:
+			if(var[inicio] == 'i'){
+				inicio = inicio + 1;
+				goto q90;
+		 	}
+            goto q93;
+
+		q90:
+			if(var[inicio] == 'l'){
+				inicio = inicio + 1;
+				goto q91;
+		 	}
+            goto q93;
+
+		q91:
+			if(var[inicio] == 'e'){
+				inicio = inicio + 1;
+				goto q92;
+		 	}
+            goto q93;
+
+		// Palavra Final a ser reconhecida é while
+		q92:
+			if(strlen(var) == inicio){
+				sprintf(classe,"%s","reservada");
+				return 0;
+			}
+            goto q93;
+
+        /* Reconhece todos os números */
+		q96:
+		    if(strlen(var) == inicio){
+				sprintf(classe,"%s","numero");
+				return 0;
+			}else if(var[inicio] == '0'|| var[inicio] == '1'|| var[inicio] == '2'|| var[inicio] == '3'||
+                                     var[inicio] == '4'|| var[inicio] == '5'|| var[inicio] == '6'||
+                                      var[inicio] == '7'|| var[inicio] == '8'||var[inicio] == '9'){
+                inicio = inicio + 1;
+                goto q96;
+			}
+			return -1;
+
+		// Palavra Final a ser reconhecida é abcdefghijklmnoprstuvwyxz
+		q93:
+			if(strlen(var) == inicio){
+				sprintf(classe,"%s","id");
+				return 0;
+			}else if(var[inicio] == 'a' || var[inicio] == 'b' || var[inicio] == 'c' || var[inicio] == 'd'|| var[inicio] == 'e'||
+                    var[inicio] == 'f'|| var[inicio] == 'g'|| var[inicio] == 'h'||
+                     var[inicio] == 'i'|| var[inicio] == 'j'|| var[inicio] == 'k'||
+                      var[inicio] == 'l'|| var[inicio] == 'm'|| var[inicio] == 'n'||
+                       var[inicio] == 'o'|| var[inicio] == 'p'|| var[inicio] == 'q'||
+                        var[inicio] == 'r'|| var[inicio] == 's'|| var[inicio] == 't'||
+                         var[inicio] == 'u'|| var[inicio] == 'v'|| var[inicio] == 'w'||
+                          var[inicio] == 'y'|| var[inicio] == 'x'|| var[inicio] == 'z'||
+                           var[inicio] == 'A'|| var[inicio] == 'B'|| var[inicio] == 'C'||
+                            var[inicio] == 'D'|| var[inicio] == 'E'|| var[inicio] == 'F'||
+                             var[inicio] == 'G'|| var[inicio] == 'H'|| var[inicio] == 'I'||
+                              var[inicio] == 'J'|| var[inicio] == 'K'|| var[inicio] == 'L'||
+                               var[inicio] == 'M'|| var[inicio] == 'N'|| var[inicio] == 'O'||
+                                var[inicio] == 'P'|| var[inicio] == 'Q'|| var[inicio] == 'R'||
+                                 var[inicio] == 'S'|| var[inicio] == 'T'|| var[inicio] == 'U'||
+                                  var[inicio] == 'V'|| var[inicio] == 'W'|| var[inicio] == 'Y'||
+                                   var[inicio] == 'X'|| var[inicio] == 'Z'|| var[inicio] == 'A'||
+                                    var[inicio] == '0'|| var[inicio] == '1'|| var[inicio] == '2'||
+                                     var[inicio] == '3'|| var[inicio] == '4'|| var[inicio] == '5'||
+                                      var[inicio] == '6'|| var[inicio] == '7'|| var[inicio] == '8'||
+                                       var[inicio] == '9' || var[inicio] == '_'){
+                inicio = inicio + 1;
+				goto q93;
+			}
+			return 1;
+
+		q94:
+			if(var[inicio] == '='){
+				inicio = inicio + 1;
+				goto q95;
+		 	}
+			return 1;
+
+        // Palavra Final a ser reconhecida é ::=
+		q95:
+			if(strlen(var) == inicio){
+				sprintf(classe,"%s","operador");
+				return 0;
+			}
+			return 1;
+
+        // Palavra Final a ser reconhecida é +
+		q97:
+			if(strlen(var) == inicio){
+				sprintf(classe,"%s","operador");
+				return 0;
+			}
+			return 1;
+
+        // Palavra Final a ser reconhecida é =
+		q98:
+			if(strlen(var) == inicio){
+				sprintf(classe,"%s","operador");
+				return 0;
+			}
+			return 1;
+
+
+		return 1;
+
+}

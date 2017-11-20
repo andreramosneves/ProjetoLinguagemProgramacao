@@ -1,0 +1,24 @@
+correto		program
+a	integer	var
+b	integer	var
+c	integer	var
+d	boolean	var
+e	boolean	var
+f	boolean	var
+proc		procedure
+a1	integer	var
+b1	boolean	var
+a	integer	var
+b	integer	var
+c	integer	var
+d	boolean	var
+e	boolean	var
+f	boolean	var
+proc1		procedure
+a1	integer	var
+a	integer	var
+b	integer	var
+c	integer	var
+d	boolean	var
+e	boolean	var
+f	boolean	var

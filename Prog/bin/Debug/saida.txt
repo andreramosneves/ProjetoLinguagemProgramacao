@@ -1,0 +1,17 @@
+program
+teste123
+;
+var
+xW
+,
+uau
+:
+integer
+;
+var
+Qw
+:
+boolean
+;
+begin
+ ERRO SINTATICO 
